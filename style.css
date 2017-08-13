@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
 
-.anim-text-flow,
-.anim-text-flow-hover:hover {
+.anim-text-flow, .anim-text-flow-hover:hover {
   $animationSteps: 20;
   $animationDuration: 50;
   $animationElement: span;
