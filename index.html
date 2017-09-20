@@ -1,107 +1,130 @@
+<!--...............................................................................
+Youmax Classic v1.0 by Jake H. from CodeHandling
+................................................................................-->
+
+<!DOCTYPE html>
 <html>
+
 <head>
-<title>sukmo is here</title>
-<style>
-/*
- * Animation module with all animation code
- */
-.anim-text-flow,
-.anim-text-flow-hover:hover {
-  /*
-   * Animation variables
-   */
-  $animationSteps: 20;
-  $animationDuration: 50;
-  $animationElement: span;
-  $animationElementsCount: 100;
-  $delayBetweenLetters: 0.2;
 
-  /*
-   * Elements settings
-   */
-  #{$animationElement} {
-    animation-name: anim-text-flow-keys;
-    animation-duration: #{$animationDuration}s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-  }
+	<meta name="viewport" content="width=device-width">
+	<title>Zellika Oscarina</title>
+    <!-- Youmax Scripts -->
+    <link href="./css/youmax.min.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="./js/youmax.min.js"></script>
+    <!-- ends -->
 
-  /*
-   * Keyframe loop
-   */
-  @keyframes anim-text-flow-keys {
-    @for $i from 0 through $animationSteps {
-      #{percentage($i * (1 / $animationSteps))} {
-        color: hsla(random(365), 60, 60, 1);
-      }
-    }
-  }
+    <style>
 
-  /*
-   * Element animation delay loop
-   */
-  $totalDelayTime: $animationElementsCount * $delayBetweenLetters;
+        body {
+        	margin:0px;
+        	box-sizing: border-box;
+        }
 
-  @for $i from 1 through $animationElementsCount {
-    #{$animationElement}:nth-of-type(#{$i}) {
-      animation-delay: #{($i * $delayBetweenLetters) - $totalDelayTime}s;
-    }
-  }
-}
+        #your-page-column {
+            width: 70%;
+            margin: 0px auto;
+            text-align: center;
+        }
 
-////////////////////////////
-// DEMO CODE 
-///////////////////////////
-body {
-  background-color: #1a1a1a;
-  color: #fefefe;
-  font-family: 'Ubuntu';
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 1.3em;
-  line-height: 2;
-  font-weight: 300;
-  text-rendering: optimizeLegibility;
-  text-align: center;
-}
+        .support {
+            display: inline-block;
+            background-color: #009688;
+            color: white;
+            padding: 1em;
+            font-size: 1.2em;
+            font-family: Calibri;
+            margin: 4em auto;
+            text-align: left;
+            width: 18em;
+        }
 
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-}
+        .support .fa-group {
+            font-size: 2.2em;
+            float: left;
+            margin-right: 0.3em;
+        }
 
-.txt {
-  display: block;
-}
+        .footer i {
+            color: #E91E63;
+        }
 
-a { 
-  text-decoration: none;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  text-align: right;
-  color: #eee;
-  font-size: 15px;
-  line-height: 15px;
-}
+        .footer {
+            margin: 4em auto;
+            font-family: Calibri;
+            font-size: 1em;
+        }   
 
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
-</style>
-<script type='text/javascript'>
-$('.txt').html(function(i, html) {
-  var chars = $.trim(html).split("");
+    </style>
 
-  return '<span>' + chars.join('</span><span>') + '</span>';
-});
-</script>
 </head>
+
 <body>
-<div class="container">
-  <span class="txt anim-text-flow">Jangan lupa bahagia...!!!</span>
-</div>
+
+    <br>
+
+    <div id="your-page-column" class="not-a-part-of-youmax-plugin">
+
+        <!--
+        Are you serious about your website?
+        Then get Youmax PRO here
+        https://codecanyon.net/item/youmax-grow-your-youtube-and-vimeo-business/9989505?ref=codehandling
+        -->
+
+               <!--Youmax Container-->
+        <div class="youmax"></div>
+        <!-- ends -->
+
+        <div class="footer">Made with <i class="fa fa-heart"></i> by codehandling</div>
+
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+    <!-- Youmax Call -->
+    <script>
+
+        $(document).ready(function(){
+
+            $(".youmax").youmax({
+                apiKey:"AIzaSyAlhAqP5RS7Gxwg_0r_rh9jOv_5WfaJgXw",
+
+                channelLink:"https://www.youtube.com/channel/UCH9KkoGTH_4TqY0nowQGk0A",
+                playlistLink:"https://www.youtube.com/playlist?list=PLaaBnp8LQjqt-CUe6-P1Z-eYtvxDrzLE_",
+                
+                defaultTab:"Uploads",         //Uploads|Playlists|Featured
+                videoDisplayMode:"popup",       //popup|link|inline
+
+                maxResults:"9",
+                autoPlay:false,
+                displayFirstVideoOnLoad:true,       //for inline video display mode only
+                
+
+                responsiveBreakpoints   :[600,900,2000,2500],
+
+                loadMoreText            :"<i class=\"fa fa-plus\"></i>&nbsp;&nbsp;Show me more videos..",
+                previousButtonText      :"<i class=\"fa fa-angle-left\"></i>&nbsp;&nbsp;Previous",
+                nextButtonText          :"Next&nbsp;&nbsp;<i class=\"fa fa-angle-right\"></i>",
+                loadingText             :"loading...",
+                allDoneText             :"<i class=\"fa fa-times\"></i>&nbsp;&nbsp;All done..",
+
+                hideHeader              :false,
+                hideTabs                :false,
+                hideLoadingMechanism    :false,
+
+
+            });
+        });
+
+
+    </script>
+    <!-- ends -->
+
 </body>
 </html>
